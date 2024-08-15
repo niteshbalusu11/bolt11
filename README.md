@@ -4,13 +4,13 @@ A library for encoding and decoding lightning network payment requests as define
 
 ## Installation
 ``` bash
-npm install bolt11
+npm install @niteshbalusu/bolt11
 ```
 
 ## Setup
 ### Node.js
 ``` javascript
-var lightningPayReq = require('bolt11')
+var lightningPayReq = require('@niteshbalusu/bolt11')
 ```
 
 
