@@ -34,10 +34,10 @@
     "bolt11",
     "bech32"
   ],
-  "author": "Jonathan Underwood",
+  "author": "Nitesh Balusu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitcoinjs/bolt11/issues"
+    "url": "https://github.com/niteshbalusu11/bolt11"
   },
   "homepage": "https://github.com/bitcoinjs/bolt11#readme",
   "dependencies": {
