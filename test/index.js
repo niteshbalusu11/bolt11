@@ -323,3 +323,17 @@ tape('can encode and decode small timestamp', (t) => {
   t.same(reEncoded.paymentRequest, signedData.paymentRequest)
   t.end()
 })
+
+tape('test decode with SIGNETWORK', (t) => {
+  // Create a minimal valid payment request for SIGNETWORK
+  const signetPaymentRequest = 'lntbs10n1pnt7ufypp5yxdxehwjzdhu2efnee66xj2swzacxc3uukwyl0u8qa5q05r45u2sdq8w3jhxaqcqzzsxqzjcsp520849kpt3yqf38k4hx2g705q6u0f0ceyy6y74cf5dgjg3awm25vs9qyyssqu8npjsjj9lu3szslam225twj75nckaxuweygcwzpeagu6p79gv9hk2vcq6cs67s9hqx8pxjeyktdum6ymramaq3k0wn235pp6x9e07sqrtagq7'
+
+  const decoded = lnpayreq.decode(signetPaymentRequest)
+
+  t.equal(decoded.network.bech32, 'tbs', 'Network should be SIGNETWORK')
+  t.equal(decoded.network.pubKeyHash, 0x6f, 'pubKeyHash should match SIGNETWORK')
+  t.equal(decoded.network.scriptHash, 0xc4, 'scriptHash should match SIGNETWORK')
+  t.deepEqual(decoded.network.validWitnessVersions, [0, 1], 'validWitnessVersions should match SIGNETWORK')
+
+  t.end()
+})
